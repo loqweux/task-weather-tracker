@@ -1,8 +1,8 @@
-import { useTheme } from "../context/ThemeContext";
 import { Container, Typography, Switch, FormControlLabel } from "@mui/material";
+import { useThemeStore } from "../store/themeStore";
 
 export default function SettingsPage() {
-  const { dark, setDark } = useTheme();
+  const { dark, setDark } = useThemeStore();
 
   return (
     <Container maxWidth="sm" sx={{ py: 4 }}>

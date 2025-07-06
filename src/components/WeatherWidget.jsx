@@ -14,7 +14,7 @@ import { useWeather } from "../hooks/useWeather";
 
 export default function WeatherWidget() {
   const [city, setCity] = useState("Moscow");
-  const [debouncedCity] = useDebounce(city, 600); // запрос после 600 мс паузы
+  const [debouncedCity] = useDebounce(city, 600);
   const { data, loading, error } = useWeather(debouncedCity);
 
   return (

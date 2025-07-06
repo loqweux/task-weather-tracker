@@ -1,12 +1,36 @@
-# React + Vite
+# Интерактивный Трекер Задач с Погодой
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Приложение позволяет:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Создавать, просматривать и отмечать задачи как выполненные/невыполненные.
+- Получать актуальную информацию о погоде в любом городе.
+- Настраивать тему (светлая/тёмная) и сохранять настройки между сессиями.
 
-## Expanding the ESLint configuration
+## Версии
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1.0
+
+- Базовый функционал трекера задач (добавление, отметка выполненности).
+- Виджет погоды с вводом города и получением данных через OpenWeatherMap API.
+- Сохранение задач и темы в `localStorage`.
+- Простая тема оформления (light/dark).
+- Реализация на React Context API для управления состоянием
+
+### 1.1
+
+- Замена React Context API на Zustand для глобального состояния темы
+- Автоматическое сохранение настроек темы через persist-мидлвар
+- Упрощение структуры приложения (убраны вложенные провайдеры)
+- Оптимизация производительности (точечные подписки на состояние)
+
+## Технологии
+
+- **React** + Vite
+- **React Router** для маршрутизации
+- **Axios** для HTTP-запросов
+- **react-hook-form** + **Yup** для форм и валидации
+- **use-debounce** для оптимизации запросов
+- **MUI** + **Emotion** для UI
+- **Framer Motion** для анимаций
