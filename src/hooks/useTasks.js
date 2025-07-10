@@ -11,12 +11,22 @@ export function useTasks() {
 
   const addTask = (title) => {
     const newTask = { id: Date.now(), title, done: false };
-    setTasks([...tasks, newTask]);
+    setTasks((prev) => [...prev, newTask]);
   };
 
   const toggleTask = (id) => {
-    setTasks(tasks.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
+    setTasks((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
+    );
   };
 
-  return { tasks, addTask, toggleTask };
+  const deleteTask = (id) => {
+    setTasks((prev) => prev.filter((t) => t.id !== id));
+  };
+
+  const reorderTasks = (newOrder) => {
+    setTasks(newOrder);
+  };
+
+  return { tasks, addTask, toggleTask, deleteTask, reorderTasks };
 }
